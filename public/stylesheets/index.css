@@ -1,0 +1,21 @@
+#intro{
+    margin-top:400px;
+}
+
+.jumbotron{
+    position:relative;
+    width:75.5%;
+    margin-left:15%;
+}
+body{
+    background-image: url("http://localhost:3000/images/bgimg.jpg");
+    background-color:#ffffff;
+}
+
+.col-md-4 p{
+    font-size:17px;
+}
+
+footer{
+    color:white;
+}

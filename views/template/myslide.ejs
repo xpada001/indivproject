@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/slide.css">
+
+    <script type="text/javascript">
+        var nrimg = 3; // the number of img
+        var intsec = 4; // the time between the images
+
+        function Load()
+        {
+            nrshown = 0; //the img visible
+            vect = new Array(nrimg + 10);
+            vect[0] = document.getElementById("Img1");
+            vect[0].style.visibility="visible";
+            document.getElementById("D" + 0).style.backgroundColor = "#32CD32";
+            document.getElementById("P" + 0).style.visibility = "visible";
+
+            for(var i=1; i < nrimg; i++)
+            {
+                vect[i] = document.getElementById("Img" + (i + 1));
+
+            }
+            mytime=setInterval(timer,intsec * 1000);
+
+        }
+
+        function timer()
+        {
+            nrshown++;
+            if(nrshown == nrimg)
+                nrshown = 0;
+            Effect();
+        }
+
+        // next img
+        function next()
+        {
+            nrshown++;
+            if(nrshown == nrimg)
+                nrshown = 0;
+            Effect();
+
+            clearInterval(mytime);
+            mytime=setInterval(timer,intsec * 1000);
+        }
+
+        function prev()
+        {
+            nrshown--;
+            if(nrshown == -1)
+                nrshown = nrimg - 1;
+            Effect();
+
+            clearInterval(mytime);
+            mytime=setInterval(timer,intsec * 1000);
+        }
+
+        // changes img + effect
+
+        function Effect(){
+            for (var i=0; i<nrimg; i++)
+            {
+                vect[i].style.opacity = "0"; //create fade effect
+                vect[i].style.visibility = "hidden";
+                document.getElementById("D" + i).style.backgroundColor="black";
+                document.getElementById("P" + i).style.visibility = "hidden";
+            }
+
+            vect[nrshown].style.opacity = "1";
+            vect[nrshown].style.visibility = "visible";
+            document.getElementById("D" + nrshown).style.backgroundColor="#32CD32";
+            document.getElementById("P" + nrshown).style.visibility = "visible";
+
+        }
+
+    </script>
+
+
+</head>
+<body onload="Load()">
+
+<div id="slider">
+    <div id="images">
+        <img id="Img1" src="http://localhost:3000/images/snack1.jpg">
+        <img id="Img2" src="http://localhost:3000/images/snack2.jpg">
+        <img id="Img3" src="http://localhost:3000/images/snack3.jpg">
+
+    </div>
+
+    <div id="Snav">
+        <div id="Snavup">
+            <div id="Scircle">
+                <ul>
+                    <li id="D0"></li>
+                    <li id="D1"></li>
+                    <li id="D2"></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="Snavmiddle">
+            <img id="SLeft" src="http://localhost:3000/images/left.png" onclick="prev()"/>
+            <img id="SRight" src="http://localhost:3000/images/right.png" onclick="next()"/>
+
+        </div>
+
+        <div id="SnavBottom">
+            <p id="P0">img 1</p>
+            <p id="P1">img 2</p>
+            <p id="P2">img 3</p>
+
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>
+
+

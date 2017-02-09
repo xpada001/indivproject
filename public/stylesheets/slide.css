@@ -1,0 +1,128 @@
+
+
+#images img {
+    width:70%;
+    height:60%;
+    position:absolute;
+    top:0;
+    left:250px;
+    visibility:hidden; /* we want only show one img at a time */
+    transition:1s;
+}
+
+/* the container */
+
+#Snav {
+    display:block;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#Snavup {
+    display:block;
+    width:100%;
+    height:10%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#Scircle {
+    display:block;
+    width:5%;
+    height:20%;
+    margin-right:20%;     /* where you want to position the dots */
+    margin-top:5%;
+    float:right;         /* circle move to right side*/
+}
+
+#Scircle ul{
+    margin:0;
+    float:right;
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+#Scircle li {
+    list-style: none; /* we dont want these dots */
+    display: block;
+    background-color: #412828;
+    width: 25%;
+    height: 100%;
+    margin-right: 5%;
+    float:left; /* put them on the same line */
+
+    /* we want circles, not squares */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+/* now we are done with Snavup */
+
+#Snavmiddle{
+    display:block;
+    width:100%;
+    height:20%;
+    margin-top:10%; /* up to you where you want the button */
+}
+
+#SLeft{
+    display:block;
+    width:5%;
+    height:50%;
+    float:left;
+    margin-left:22%; /* how far from left */
+    margin-top:6%;
+    opacity:0.6;
+}
+
+#SRight{
+    display:block;
+    width:5%;
+    height:50%;
+    float:right;
+    margin-top:6%;
+    margin-right:21%; /* how far from right */
+    opacity:0.6;
+}
+
+/* button effect */
+
+#SLeft:hover{
+    opacity:0.8;
+}
+
+#SRight:hover{
+    opacity:0.8;
+}
+
+/* display info of each pic at bottom */
+
+#SnavBottom {
+    display:block;
+    width:62%;
+    height:6%;
+    position:absolute;
+    margin-top:6.5%;
+    opacity:0.3;
+    background-color:black;
+    margin-left:19.76%;
+}
+
+#SnavBottom p{
+    font:bold 200%; Serif;
+    font-size:40px;
+    color:white;
+    position:absolute;
+    margin-left: 5%;
+    visibility:hidden;
+}
+
+
+/* now we need to code the slider, the effect */

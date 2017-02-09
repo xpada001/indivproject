@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title> Snack!! </title>
+  <link rel="stylesheet" href="http://localhost:3000/stylesheets/style.css">
+  <link rel="stylesheet" href="http://localhost:3000/stylesheets/index.css">
+
+
+</head>
+
+<body>
+
+<% include template/myslide %>
+
+<% include template/navbar %>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron" id="intro" class="container">
+  <div class="container">
+    <h1>Snack World!</h1>
+    <p>This is the website where you can find your favorite snacks and where you can buy them!
+      feel free to rate and leave a comment on your snacks! Enjoy!
+    </p>
+    <p>
+      <a class="btn btn-primary btn-lg" role="button" href="/about">Learn more
+        &raquo;</a>
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <% include content %>
+  <hr>
+
+  <% include template/footer %>
+</div>
+<!-- /container -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#home').addClass("active");
+  });
+</script>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script
+        src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
+</html>
